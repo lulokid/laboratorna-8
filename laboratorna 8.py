@@ -28,3 +28,27 @@ if(file_1_w != None):
     print("Текст був успішно доданий до laboratorna8.txt!")
     file_1_w.close()
     print("Файл laboratorna8.txt закрився")
+
+# Автор Пасішніченко Діана
+print("Додавання відповіді")
+file_1_a = Open(file1_name, "a")
+if file_1_a != None:
+    my_response = [
+        "Пасішніченко Діана",
+        "",
+        "Відповідь на питання попереднього студента:",
+        "У Python використовують функцію open() для відкриття файлів у різних режимах, наприклад,",
+        "для читання - r, запису у файл - w, wb - запис у бінарний файл",
+        "а також інші режимів читання та запису.",
+        " "
+    ]
+
+    try:
+        for line in my_response:
+            file_1_a.write(line + "\n")
+        print("Текст був успішно доданий до laboratorna8.txt")
+    except IOError as e:
+        print(f"Помилка при записі у файл: {e}")
+    finally:
+        file_1_a.close()
+        print("Файл закрито після запису")
